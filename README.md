@@ -100,12 +100,16 @@
 
 common.Log 是一个logrus的实例，使用log的时候，可以直接使用common.Log.Info(""log内容") 函数记录log
 
+![](https://oscimg.oschina.net/oscnet/up-1eff4f9366e013787a697ba522a74b85407.png)
+
 
 ## config服务
 
 **config服务**基于viper框架搭建，加载env环境变量使用是viper，在app/bootstrap/config 中进行初始化配置
 
 并且封装了一个config包，在app/config下面，使用时候，可以直接使用这个包。
+
+![](https://oscimg.oschina.net/oscnet/up-cf4f2329c885480a5d2a636647d32ab65e9.png)
 
 
 ## mysql服务
@@ -116,7 +120,7 @@ common.Log 是一个logrus的实例，使用log的时候，可以直接使用com
 
 主要的操作封装在了models
 
-
+![](https://oscimg.oschina.net/oscnet/up-a88544f11bcf7ccf89c980b0213452af733.png)
 
 
 ## Http服务
@@ -124,6 +128,8 @@ common.Log 是一个logrus的实例，使用log的时候，可以直接使用com
 **Http服务**使用的是gin框架
 
 在 app/bootstrap/router 中进行初始化配置，路由配置文件在 app/routers中
+
+![](https://oscimg.oschina.net/oscnet/up-61e4c3b29a01d7ebf990ffb65f35dc7059c.png)
 
 
 ## 获取Http服务请求参数
@@ -139,11 +145,15 @@ common.Log 是一个logrus的实例，使用log的时候，可以直接使用com
 
 也可以使用实例中封装的  ``` 	api.Output(c, res, err) ```  返回结果
 
+![](https://oscimg.oschina.net/oscnet/up-33cfd702d9ad2657d72fb686da1df20d9e1.png)
+
 
 ## Http返回结果的设计
 
 
 返回结果包括三部分，code、data、error
+
+![](https://oscimg.oschina.net/oscnet/up-7b35ca4fe9dbf84611b2668433a93383474.png)
 
 code必有，内容用字符串表示，不是数字
 
