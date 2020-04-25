@@ -1,0 +1,64 @@
+<!-- Page header -->
+<div class="page-header page-header-default">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold"></span> 欢迎进入: 信息化平台 | 管理后台 </h4>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+<!-- Content area -->
+<div class="content">
+
+    <h6 class="content-group text-semibold">
+        介绍
+        <small class="display-block">欢迎使用
+        </small>
+    </h6>
+
+    <!-- /main charts -->
+    {{ if(checkAuth(5) || checkAuth(8)){ }}
+    <h6 class="content-group text-semibold">
+        用户管理
+        <small class="display-block">点击下面的按钮可以进入对应的管理模块</small>
+    </h6>
+    {{ } }}
+    <div class="row">
+        {{ if(checkAuth(5)){ }}
+        <div class="col-md-4">
+            <div class="panel panel-body border-top-primary text-center">
+                <h6 class="no-margin text-semibold">用户管理-用户</h6>
+                <p class="content-group-sm text-muted">管理用户信息，添加、编辑、删除用户、控制用户登录权限等</p>
+                <button type="button" class="btn btn-success" onclick='Alpaca.to("#/main/admin/memberListView")'>前往</button>
+            </div>
+        </div>
+        {{ } }}
+    </div>
+
+    <h6 class="content-group text-semibold">
+        个人信息
+        <small class="display-block">点击下面的按钮可以进入对应的管理模块</small>
+    </h6>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-body border-top-primary text-center">
+                <h6 class="no-margin text-semibold">个人信息</h6>
+                <p class="content-group-sm text-muted">查看自己的信息</p>
+                <button type="button" class="btn btn-success" onclick='Alpaca.to("#/main/auth/myInfoView")'>前往</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-body border-top-primary text-center">
+                <h6 class="no-margin text-semibold">修改密码</h6>
+                <p class="content-group-sm text-muted">修改登录密码</p>
+                <button type="button" class="btn btn-success" onclick='Alpaca.to("#/main/auth/resetPasswordView")'>前往</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="page-content-footer"></div>
+    <!-- /footer -->
+</div>
+<!-- /content area -->

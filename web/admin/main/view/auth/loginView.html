@@ -1,0 +1,81 @@
+{{ $('title').html("用户-登录"); }}
+
+<script type="text/javascript" src="{{= g_baseUrl}}main/assets/js/core/app.js"></script>
+<script type="text/javascript" src="{{= g_baseUrl}}common/js/md5-min.js"></script>
+
+<!-- Main navbar -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <a class="navbar-brand">信息化平台 | 管理后台</a>
+
+        <ul class="nav navbar-nav pull-right visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile"></div>
+</div>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Simple login form -->
+                <form id="login-form">
+                    <div class="panel panel-body login-form">
+
+                        <div class="login-way login-way-email">
+                            <div class="text-center">
+                                <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                                <h5 class="content-group">登录
+                                    <small class="display-block">请输入用户名和密码</small>
+                                </h5>
+                            </div>
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="text" class="form-control" placeholder="用户名" name="login_name" value="">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="password" class="form-control" placeholder="密码" name="password" value="">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block btn-sub-login">登录 <i class="icon-circle-right2 position-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /simple login form -->
+
+                <!-- Footer -->
+                <div id="page-content-footer"></div>
+                <!-- /footer -->
+            </div>
+            <!-- /content area -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+</div>
+
+
+<script>
+    var flushCaptcha = function () {
+        var url = g_url + "/main/auth/getCaptcha?v=" + Math.random();
+        $("#image-captcha").attr('src', url);
+    };
+</script>

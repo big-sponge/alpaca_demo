@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "app",
+    "http_port": "9999",
+    "version": "pro_2.0",
+    "env": "production"
+  },
+  "app_log": {
+    "dir": "./storage/logs/",
+    "filename": "app.log"
+  },
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": "3306",
+    "database": "db_go_demo",
+    "user": "root",
+    "password": "password"
+  }
+}
