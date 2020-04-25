@@ -153,8 +153,6 @@ common.Log 是一个logrus的实例，使用log的时候，可以直接使用com
 
 返回结果包括三部分，code、data、error
 
-![](https://oscimg.oschina.net/oscnet/up-7b35ca4fe9dbf84611b2668433a93383474.png)
-
 code必有，内容用字符串表示，不是数字
 
 data是在有请求结果集的时候，用于放结果集
@@ -178,6 +176,11 @@ code 有三大类
 ** 系统错误 **
 
 ``` code:"error"" ``` 表示系统内部错误，例如mysql没恋上，其他panic错误
+
+返回的code放在了 app/common/code包里面
+
+![](https://oscimg.oschina.net/oscnet/up-7b35ca4fe9dbf84611b2668433a93383474.png)
+
 
 ## 后台管理Web段
 
