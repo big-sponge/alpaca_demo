@@ -10,10 +10,18 @@
 
 5、浏览器中打开http://127.0.0.1:9999/web/admin, 默认用户名admin，密码111111
 
+![](https://oscimg.oschina.net/oscnet/up-e9c6a05249f55b24e5382480ee053f87681.png)
+
+输入用户名、密码登录成功后，内容如下
+
+![](https://oscimg.oschina.net/oscnet/up-e65d328aeedd599168793765a5129068201.png)
+
 
 # 目录说明
 
 主要的几个目录的解释如下
+
+![](https://oscimg.oschina.net/oscnet/up-99e99677fb61129764c80d3a392d1767c32.png)
 
 ---
 
@@ -65,6 +73,11 @@
 ---
 
 ## 设计架构
+
+入口函数内容如下：
+
+![](https://oscimg.oschina.net/oscnet/up-e8dfc357732ee7c5d9072f9458a38fd6121.png)
+
 
 代码的总体结构设计如下图：
 
@@ -155,3 +168,24 @@ code 有三大类
 ** 系统错误 **
 
 ``` code:"error"" ``` 表示系统内部错误，例如mysql没恋上，其他panic错误
+
+## 后台管理Web段
+
+**后台管理Web段**使用的是alpaca-spa框架
+
+在 app/web/admin里面
+
+
+## 参考资料
+
+**go语言参考资料**
+
+**gin框架**
+
+**gorm框架**
+
+**logurs框架**
+
+**viper框架**
+
+**alpaca-spa框架**
