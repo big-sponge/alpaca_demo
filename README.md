@@ -93,6 +93,8 @@
 
 **models包** 可以引用common包，但是不可以引用services包
 
+Go语言初学经常会遇到包循环引用的问题，因此梳理清晰包与包直接的调用关系很重要
+
 
 ## log服务
 
@@ -202,3 +204,17 @@ code 有三大类
 **viper框架**
 
 **alpaca-spa框架**
+
+
+## 沟通交流
+
+有问题可以加入QQ群或者我的微信交流沟通
+
+**QQ群**
+
+![](https://oscimg.oschina.net/oscnet/up-3ae028bf6e563febeba77c084bfb9113f36.png)
+
+
+**微信**
+
+![](https://oscimg.oschina.net/oscnet/up-ced8a95f5863746169486178b29c6b186f1.png)
