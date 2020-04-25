@@ -215,6 +215,6 @@ code 有三大类
 ![](https://oscimg.oschina.net/oscnet/up-3ae028bf6e563febeba77c084bfb9113f36.png)
 
 
-**微信**
+**微信，添加时请做好备注**
 
 ![](https://oscimg.oschina.net/oscnet/up-ced8a95f5863746169486178b29c6b186f1.png)
