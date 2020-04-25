@@ -23,26 +23,26 @@ func Login(c *gin.Context) {
 
 	/*检查参数*/
 	if input["UserName"] != nil && reflect.TypeOf(input["UserName"]).String() != "string" {
-		api.OutputFull(c, nil, errors.New(code.FailParamFormat+".UserName"))
+		api.Output(c, nil, errors.New(code.FailParamFormat+".UserName"))
 		return
 	}
 	if input["PassWd"] != nil && reflect.TypeOf(input["PassWd"]).String() != "string" {
-		api.OutputFull(c, nil, errors.New(code.FailParamFormat+".PassWd"))
+		api.Output(c, nil, errors.New(code.FailParamFormat+".PassWd"))
 		return
 	}
 	if input["UserName"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".UserName"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".UserName"))
 		return
 	}
 	if input["PassWd"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".PassWd"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".PassWd"))
 		return
 	}
 
 	/* 获取信息 */
 	res, err := admin.CheckLogin(input)
 	if err != nil {
-		api.OutputFull(c, res, err)
+		api.Output(c, res, err)
 		return
 	}
 
@@ -51,7 +51,7 @@ func Login(c *gin.Context) {
 	c.SetCookie("admin_token", cookieToken, 3600, "/", "", false, true)
 
 	/* 返回结果 */
-	api.OutputFull(c, res, err)
+	api.Output(c, res, err)
 	return
 }
 
@@ -64,6 +64,6 @@ func Logout(c *gin.Context) {
 	/* 获取输入参数 */
 	c.SetCookie("admin_token", "", -1, "/", "", false, true)
 	/* 返回结果 */
-	api.OutputFull(c, nil, nil)
+	api.Output(c, nil, nil)
 	return
 }

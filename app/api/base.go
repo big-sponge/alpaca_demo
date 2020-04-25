@@ -132,7 +132,7 @@ func InputHeader(c *gin.Context, key string, defaultValue interface{}) interface
  * @author ChengCheng
  * @date 2019-05-14 22:10:18
  */
-func OutputFull(c *gin.Context, data interface{}, err error) {
+func Output(c *gin.Context, data interface{}, err error) {
 
 	/* 返回正确结果 */
 	if err == nil {

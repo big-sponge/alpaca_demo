@@ -66,6 +66,10 @@
 
 ## 设计架构
 
+代码的总体结构设计如下图：
+
+![img](https://oscimg.oschina.net/oscnet/up-75905893702a4524a3d38ac1e7be11c7f02.png)
+
 **bootstrap** 包是启动相关的函数。main函数调用bootstrap包中的函数初始化配置信息，如加载配置文件，配置log，开启http监听等。
 
 **common包** 里面是一些公用函数，任何其他包都可以引用common包，但是common包禁止引用除了vendor以外的其他一切包
@@ -77,5 +81,77 @@
 **models包** 可以引用common包，但是不可以引用services包
 
 
-![img](https://oscimg.oschina.net/oscnet/up-75905893702a4524a3d38ac1e7be11c7f02.png)
+## log服务
 
+**log服务**使用的是logrus框架，在app/bootstrap/log 中进行初始化配置
+
+common.Log 是一个logrus的实例，使用log的时候，可以直接使用common.Log.Info(""log内容") 函数记录log
+
+
+## config服务
+
+**config服务**基于viper框架搭建，加载env环境变量使用是viper，在app/bootstrap/config 中进行初始化配置
+
+并且封装了一个config包，在app/config下面，使用时候，可以直接使用这个包。
+
+
+## mysql服务
+
+**mysql服务**使用的gorm框架
+
+建立链接的函数是app/common/mysql.go里面的 ``` Mysql() ```
+
+主要的操作封装在了models
+
+
+
+
+## Http服务
+
+**Http服务**使用的是gin框架
+
+在 app/bootstrap/router 中进行初始化配置，路由配置文件在 app/routers中
+
+
+## 获取Http服务请求参数
+
+可以使用gin框架提供的方法进行获取http服务的请求参数
+
+也可以使用实例中封装的  ``` api.Input(c, "UserName", "") ``` 函数获取
+
+
+## 返回Http服务的请求结果
+
+可以使用gin框架提供的方法进行获取http服务的请求参数
+
+也可以使用实例中封装的  ``` 	api.Output(c, res, err) ```  返回结果
+
+
+## Http返回结果的设计
+
+
+返回结果包括三部分，code、data、error
+
+code必有，内容用字符串表示，不是数字
+
+data是在有请求结果集的时候，用于放结果集
+
+error是在出错的时候会用
+
+
+code 有三大类
+
+** 结果正常 **
+``` code:"success"" ``` 表示请求正常
+
+
+** 用户错误 **
+
+格式就是 ```fail.xxx``` ,以fail开头，后面接具体错误内容，用逗号分割，例如:
+
+``` code:"fail.param.null.password" ``` 可以表示用户输入的密码是空
+
+
+** 系统错误 **
+
+``` code:"error"" ``` 表示系统内部错误，例如mysql没恋上，其他panic错误

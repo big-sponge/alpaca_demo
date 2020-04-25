@@ -14,8 +14,8 @@ import (
 func Ping(c *gin.Context) {
 	runStatus := os.Getenv("RUN_STATUS")
 	if runStatus != "" {
-		api.OutputFull(c, runStatus, nil)
+		api.Output(c, runStatus, nil)
 	}
-	api.OutputFull(c, "pong", nil)
+	api.Output(c, "pong", nil)
 	return
 }

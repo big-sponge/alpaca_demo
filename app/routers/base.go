@@ -17,7 +17,7 @@ func Recovery() gin.HandlerFunc {
 		defer func() {
 			if err := recover(); err != nil {
 				c.Abort()
-				api.OutputFull(c, nil, errors.New(common.Recovery()))
+				api.Output(c, nil, errors.New(common.Recovery()))
 			}
 		}()
 		c.Next()

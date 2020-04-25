@@ -23,15 +23,15 @@ func EditStudent(c *gin.Context) {
 
 	/* 校验参数 */
 	if input["Name"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".Name"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".Name"))
 		return
 	}
 	if input["Number"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".Number"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".Number"))
 		return
 	}
 	if input["ClassId"] == nil {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".ClassId"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".ClassId"))
 		return
 	}
 
@@ -39,7 +39,7 @@ func EditStudent(c *gin.Context) {
 	res := models.EditStudent(input)
 
 	/* 返回结果 */
-	api.OutputFull(c, res, nil)
+	api.Output(c, res, nil)
 	return
 }
 
@@ -64,7 +64,7 @@ func ListStudent(c *gin.Context) {
 	}
 
 	/* 返回结果 */
-	api.OutputFull(c, res, nil)
+	api.Output(c, res, nil)
 	return
 }
 
@@ -83,15 +83,15 @@ func EditScore(c *gin.Context) {
 
 	/* 校验参数 */
 	if input["Name"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".Name"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".Name"))
 		return
 	}
 	if input["Number"] == "" {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".Number"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".Number"))
 		return
 	}
 	if input["ClassId"] == nil {
-		api.OutputFull(c, nil, errors.New(code.FailParamNull+".ClassId"))
+		api.Output(c, nil, errors.New(code.FailParamNull+".ClassId"))
 		return
 	}
 
@@ -99,7 +99,7 @@ func EditScore(c *gin.Context) {
 	res := models.EditStudent(input)
 
 	/* 返回结果 */
-	api.OutputFull(c, res, nil)
+	api.Output(c, res, nil)
 	return
 }
 
@@ -124,6 +124,6 @@ func ListScore(c *gin.Context) {
 	}
 
 	/* 返回结果 */
-	api.OutputFull(c, res, nil)
+	api.Output(c, res, nil)
 	return
 }

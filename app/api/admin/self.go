@@ -18,7 +18,7 @@ func Info(c *gin.Context) {
 		"member": member,
 	}
 	/* 返回结果 */
-	api.OutputFull(c, result, nil)
+	api.Output(c, result, nil)
 	return
 }
 
@@ -38,6 +38,6 @@ func ResetPwdByOld(c *gin.Context) {
 		},
 	}
 	/* 返回结果 */
-	api.OutputFull(c, result, nil)
+	api.Output(c, result, nil)
 	return
 }

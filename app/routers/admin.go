@@ -27,7 +27,7 @@ func AdminAuthMiddleware() gin.HandlerFunc {
 		}
 		if token == nil {
 			c.Abort()
-			baseApi.OutputFull(c, nil, errors.New(code.FailLogin))
+			baseApi.Output(c, nil, errors.New(code.FailLogin))
 			return
 		}
 
@@ -36,7 +36,7 @@ func AdminAuthMiddleware() gin.HandlerFunc {
 		if err != nil || userInfo == nil {
 			/* 返回结果 */
 			c.Abort()
-			baseApi.OutputFull(c, nil, errors.New(code.FailLogin))
+			baseApi.Output(c, nil, errors.New(code.FailLogin))
 			return
 		}
 
