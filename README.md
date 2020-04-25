@@ -64,4 +64,18 @@
 
 ---
 
-## 【v_1.0.0】
+## 设计架构
+
+**bootstrap** 包是启动相关的函数。main函数调用bootstrap包中的函数初始化配置信息，如加载配置文件，配置log，开启http监听等。
+
+**common包** 里面是一些公用函数，任何其他包都可以引用common包，但是common包禁止引用除了vendor以外的其他一切包
+
+**api接口** 函数可以引用common包、models包、services包等实现具体的业务逻辑
+
+**services包** 函数可以引用common包，models包实现具体的业务逻辑
+
+**models包** 可以引用common包，但是不可以引用services包
+
+
+![img](https://oscimg.oschina.net/oscnet/up-75905893702a4524a3d38ac1e7be11c7f02.png)
+
